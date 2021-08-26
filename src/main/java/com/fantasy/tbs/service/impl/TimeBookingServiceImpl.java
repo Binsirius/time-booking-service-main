@@ -81,6 +81,9 @@ public class TimeBookingServiceImpl implements TimeBookingService {
         timeBookingRepository.save(timeBookMapper.toTimeBooking(timeBookDTO));
     }
 
+    /*
+    *  get the time booking by the personal number
+    * */
     @Override
     @Transactional(readOnly = true)
     public List<TimeBooking> findByPersonalNumber(String personalNumber) {

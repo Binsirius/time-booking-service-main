@@ -12,5 +12,8 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface TimeBookingRepository extends JpaRepository<TimeBooking, Long> {
-    List<TimeBooking> findByPersonalNumber(String personalName);
+    /*
+    *  query the time booking by personal Name
+    * */
+    List<TimeBooking> findByPersonalNumber(String personalNumber);
 }

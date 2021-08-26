@@ -171,6 +171,13 @@ public class TimeBookingResource {
             .build();
     }
 
+    /*
+     *  get the all hours for the specific person with the personal number.
+     *
+     *  @param personal number(possibly, staff id )
+     * @ return the sum of hours
+     * */
+
     @GetMapping("/time-bookings/{personal_number}")
     public ResponseEntity<Integer> getPersonalNumberTime(@PathVariable String personalNumber) {
         log.debug("REST request to get TimeBooking : {}", personalNumber);
@@ -179,6 +186,7 @@ public class TimeBookingResource {
         int sum=0;
 
         for(TimeBooking time : list){
+            // ToDo get the specific sum of hours
             sum += time.getBooking().getHour();
         }
 
